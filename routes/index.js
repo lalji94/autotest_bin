@@ -260,7 +260,7 @@ router.get('/', function (req, res, next) {
                   if (err) {
                     console.log('err: ', err);
                   }else{
-                      teleAutoPostChannel(finalAmazon,"@salebabaG",ListflagData.kudart_token);
+                      teleAutoPostChannel(finalAmazon,"@whalebotlivealerts",ListflagData.kudart_token);
                 }
               })
               }
