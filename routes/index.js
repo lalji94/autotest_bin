@@ -53,7 +53,7 @@ router.get('/', function (req, res, next) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-//              posttele (rides[0].cnt, last_insert_id.id, matchObj);
+             posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -223,7 +223,35 @@ router.get('/', function (req, res, next) {
                 }
               }
              setTimeout(()=>{
-              let finalAmazon = final.join('\n').replace(/\[/g,'\n 👉 ').replace(/\]/g,'');
+              let finalAmazonDemo = final.join('\n').replace(/\[/g,'\n 👉 ').replace(/\]/g,'');
+              let finalAmazonDemo1;
+              if( finalAmazonDemo.indexOf("Pumping") != -1){
+                let titlePost = "🟢 Price Alert 👉 \n\n";
+                 finalAmazonDemo1 = titlePost.concat(finalAmazonDemo);
+              }else if( finalAmazonDemo.indexOf("Dumping") != -1){
+                let titlePost = "🔴 Price Alert 👉 \n\n";
+                finalAmazonDemo1 = titlePost.concat(finalAmazonDemo);
+              }else{
+                finalAmazonDemo1 = finalAmazonDemo;
+              }
+             
+              let finalAmazon = finalAmazonDemo1.replace('Binance','<a href="https://www.binance.com/en/register?ref=O5GG7C15&utm_campaign=web_share_copy">Binance</a>')
+              .replace('Nexo','<a href="https://nexo.io/">Nexo</a>')
+              .replace('Okex','<a href="https://www.okex.com/">Okex</a>')
+              .replace('Huobi','<a href="https://www.huobi.com/">Huobi</a>')
+              .replace('Ftx','<a href="https://ftx.com/">Ftx</a>')
+              .replace('Bitstamp','<a href="https://www.bitstamp.net/">Bitstamp</a>')
+              .replace('Xapo','<a href="https://www.xapo.com/">Xapo</a>')
+              .replace('Curve.Fi','<a href="https://curve.fi/">Curve.Fi</a>')
+              .replace('Bitfinex','<a href="https://www.bitfinex.com/">Bitfinex</a>')
+              .replace('Gopax','<a href="https://www.gopax.com/">Gopax</a>')
+              .replace('Bybit','<a href="https://www.bybit.com/">Bybit</a>')
+              .replace('Aave','<a href="https://aave.com/">Aave</a>')
+              .replace('Bitflyer','<a href="https://bitflyer.com/en-eu/">Bitflyer</a>')
+              .replace('Bitbank','<a href="https://www.bitbank.com/">Bitbank</a>')
+              .replace('Deribit','<a href="https://www.deribit.com/">Deribit</a>')
+              .replace('Kucoin','<a href="https://www.kucoin.com/ucenter/signup?rcode=rJMVH54&lang=en_US&utm_source=friendInvite">Kucoin</a>')
+              .replace('Coinbase','<a href="https://www.coinbase.com/">Coinbase</a>');
               if(finalAmazon.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)){
                 let finalIdList = JSON.parse(ListflagData.array_data).user;
                 let insertFeild = [rides[0].post_id + i, 'demo']
@@ -232,7 +260,7 @@ router.get('/', function (req, res, next) {
                   if (err) {
                     console.log('err: ', err);
                   }else{
-                      teleAutoPostChannel(finalAmazon,"@whalebotlivealerts",ListflagData.kudart_token);
+                      teleAutoPostChannel(finalAmazon,"@salebabaG",ListflagData.kudart_token);
                 }
               })
               }
