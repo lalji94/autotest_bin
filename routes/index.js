@@ -139,7 +139,7 @@ router.get('/', function (req, res, next) {
                      tagnot= unshortenedUrl.replace(/@/g, '').concat('?r='+ListflagData.user_post_tag).replace(/&&/g, '&').replace(/(\?&)/g, '?').replace(/&&&/g, '&');
                     }
 
-                    final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),'<a href="' + tagnot + '">Trade ' + linkTitleFinal[0] + ' On Kucoin</a>');
+                    final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),'<a href="' + tagnot + '"><b>Trade ' + linkTitleFinal[0] + ' On Kucoin</b></a>');
 
                   // if(ListflagData.bitlyFlag == "True"){ 
                   //  example(tagnot.replace(/&demoyou/g, ''));
@@ -185,7 +185,7 @@ router.get('/', function (req, res, next) {
                     }else{
                      tagnot= unshortenedUrl.replace(/@/g, '').concat('?ref='+ListflagData.org_post_tag).replace(/&&/g, '&').replace(/(\?&)/g, '?').replace(/&&&/g, '&');
                     }
-                    final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),'<a href="' + tagnot + '">Trade ' + linkTitleFinal[0] + ' On Binance</a>');
+                    final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),'<a href="' + tagnot + '"><b>Trade ' + linkTitleFinal[0] + ' On Binance</b></a>');
                     console.log('final[j]: ', final[j]);
 
                   // if(ListflagData.bitlyFlag == "True"){ 
