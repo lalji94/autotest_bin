@@ -8,11 +8,18 @@ var mysql  = require('mysql');
 //     database:'jlp5WFrvL6'
 //   };
 
+// var db_config = {
+//     host     : 'sql6.freesqldatabase.com',
+//     user     : 'sql6438098',
+//     password : 'pgypDCV7Mz',
+//     database:'sql6438098'
+//   };
+
 var db_config = {
     host     : 'sql6.freesqldatabase.com',
-    user     : 'sql6438098',
-    password : 'pgypDCV7Mz',
-    database:'sql6438098'
+    user     : 'sql6468934',
+    password : 'nRA6VJ69MP',
+    database:'sql6468934'
   };
 
 //- Create the connection variable
